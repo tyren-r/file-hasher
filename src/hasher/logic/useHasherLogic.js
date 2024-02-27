@@ -5,16 +5,14 @@ import Hex from 'crypto-js/enc-hex';
 import WordArray from 'crypto-js/lib-typedarrays';
 import { useState } from 'react';
 
-const FileHasherLogic = () => {
+const useHasherLogic = () => {
     const [hashedFiles, setHashedFiles] = useState([]);
     const [isLoading, setLoading] = useState(false);
   
     const hashFiles =  (files) => {
         setLoading(true);
       if (files[0] !== undefined) {
-        
         try {
-           
           files.forEach((file) => {
             var reader = new FileReader();
             reader.addEventListener(
@@ -33,16 +31,13 @@ const FileHasherLogic = () => {
                                 }])
                 });
                 reader.readAsArrayBuffer(file);
-                
           })
           setLoading(false);
         }
   
         catch (e) {
-
           alert('There was an error hashing your files:', e);
           setLoading(false);
-          
         }
       }
     }
@@ -55,4 +50,4 @@ const FileHasherLogic = () => {
   
   };
   
-  export default FileHasherLogic;
+  export default useHasherLogic;

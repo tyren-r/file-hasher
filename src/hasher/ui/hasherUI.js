@@ -5,7 +5,7 @@ import { useDropzone } from 'react-dropzone';
 import ClipLoader from "react-spinners/ClipLoader";
 import downloadImage from "../assets/download.png";
 
-const FileHasherUI = (props) => {
+const FileHasherUI = () => {
   const { hashFiles, deleteFile, hashedFiles, isLoading } = FileHasherLogic();
   const { getRootProps, getInputProps } = useDropzone({ onDrop: hashFiles });
 
@@ -24,7 +24,6 @@ const FileHasherUI = (props) => {
 
   const hasher = () => (
   files.length === 0 ? (
-  
     <div className={styles.uploader}>
       <input {...getInputProps()} />
       <img src={downloadImage} />
