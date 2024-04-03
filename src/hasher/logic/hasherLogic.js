@@ -28,7 +28,7 @@ const FileHasherLogic = () => {
                                   'file_size': file.size,
                                   'file_type': file.type,
                                   'md5_hash': md5HashedFile,
-                                  'sha1-base16': sha1Base16File,
+                                  // 'sha1-base16': sha1Base16File,
                                   'sha2': sha2HashedFile,
                                 }])
                 });
