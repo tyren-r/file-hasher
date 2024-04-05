@@ -5,7 +5,7 @@ function App() {
    container:{ fontFamily:'sans-serif',textAlign:'center',display:'flex',flexDirection:'column',alignItems:'stretch',minHeight:'100vh',minWidth:'100%'},
     headers : {backgroundImage: "linear-gradient(#004C98,#00264C)",height:'47px', flexShrink:0},
     main :{flexGrow:1, flexShrink:0},
-    mainBox : {backgroundImage: "linear-gradient(#FFFFFF,#D5D5D3)",height:'70vh',border:'1px solid grey',margin:'4% 6%'},
+    mainBox : {backgroundImage: "linear-gradient(#FFFFFF,#D5D5D3)",height:'50vh',border:'1px solid grey',margin:'4% 6%'},
     font : {color:'grey'}
   }
   return (
