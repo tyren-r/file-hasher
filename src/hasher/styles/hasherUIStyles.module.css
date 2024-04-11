@@ -1,24 +1,12 @@
-/* .container {
-  font-family: sans-serif;
-  height: 55%;
-  width: 80%;
-  border: 1px solid grey;
-  align-items: center;
-  padding: 20px;
-  margin:50px;
-  /* transition: border .24s ease-in-out; */
 
 .uploader{
-  font-family: sans-serif;
   background-color: #FAF9F9;
   border:2px dashed grey;
   padding: 20px;
   margin:3% 6%;
   cursor: pointer;
 }
-h2 {
-  color: grey;
-}
+
 img {
   height:8%;
   width:8%;
@@ -26,32 +14,30 @@ img {
 
 table {
   table-layout: fixed;
-  width: 80%; 
+  width: 90%; 
   margin: auto;
-  text-indent: initial;
-  border-spacing: 2px;
   border-collapse: collapse;
   background-color: white;
-  color: #808080;
-  border-width: 2;
-  border-radius: 2;
-  
 }
 td, th {
   border: 1px solid grey;
+  padding: 4px;
+}
+td{
   text-align: left;
-  padding: 8px;
   word-wrap: break-word;
-  
+  border: 1px solid grey;
+  font-size: small;
 }
 tr:nth-child(even) {
   background-color: #dddddd;
 }
 button {
-  padding:5px;
-  width:80%;
+  padding:3px;
+  width:60%;
   border-radius: 5px;
   cursor: pointer;
+  font-size: small;
 }
 .buttonCell {
   text-align: center;
