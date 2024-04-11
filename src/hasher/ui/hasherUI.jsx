@@ -9,15 +9,15 @@ const FileHasherUI = () => {
   const { hashFiles, deleteFile, hashedFiles, isLoading } = FileHasherLogic();
   const { getRootProps, getInputProps } = useDropzone({ onDrop: hashFiles });
 
+  const headers = ["File Name","File Size (Bytes)","File Type","MD5","SHA-1","SHA-2","Delete"];
+  const fileArrayKeys = ['file_size','file_type','md5_hash','sha1-base16','sha2']
+
 
   const files = hashedFiles.map((hashedFile, index) => (
     <tr key={index} >
       <td >{hashedFile['file_name']}</td>
-      <td align="right">{hashedFile['file_size'] ? (hashedFile['file_size'] + ' mb') : ('NA')}</td>
-      <td align="right">{hashedFile['file_type'] ? (hashedFile['file_type']) : ('NA')}</td>
-      <td align="right">{hashedFile['md5_hash'] ? (hashedFile['md5_hash']) : ('NA')}</td>
-      <td align="right">{hashedFile['sha1-base16'] ? (hashedFile['sha1-base16']) : ('NA')}</td>
-      <td align="right">{hashedFile['sha2'] ? (hashedFile['sha2']) : ('NA')}</td>
+      {/* order of files wont change, so index as key is okay here */}
+      {fileArrayKeys.map((fileKey,index)=><td key={index} align="right">{hashedFile[fileKey] ? (hashedFile[fileKey]) : ('NA')}</td>)}
       <td align="right" className={styles.buttonCell}><button onClick={(e) => { e.stopPropagation(); deleteFile(hashedFile) }}><b>Delete</b></button></td>
     </tr>
   ));
@@ -35,14 +35,7 @@ const FileHasherUI = () => {
     <table>
       <thead>
         <tr>
-          <th>File Name</th>
-          <th>File Size</th>
-          <th>File Type</th>
-          <th>MD5</th>
-          <th>SHA-1</th>
-          <th>SHA-2</th>
-          <th>Actions</th>
-
+          {headers.map((header,index)=><th key={index}>{header}</th>)}
         </tr>
       </thead>
       <tbody>
